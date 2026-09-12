@@ -60,7 +60,7 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(116, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
@@ -88,8 +88,9 @@
             // cadastrarUsuáriosToolStripMenuItem
             // 
             cadastrarUsuáriosToolStripMenuItem.Name = "cadastrarUsuáriosToolStripMenuItem";
-            cadastrarUsuáriosToolStripMenuItem.Size = new Size(171, 22);
+            cadastrarUsuáriosToolStripMenuItem.Size = new Size(180, 22);
             cadastrarUsuáriosToolStripMenuItem.Text = "Cadastrar usuários";
+            cadastrarUsuáriosToolStripMenuItem.Click += cadastrarUsuáriosToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 

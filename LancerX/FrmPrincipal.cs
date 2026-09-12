@@ -10,7 +10,7 @@ namespace LancerX;
 
 public partial class FrmPrincipal : Form
 {
-        bool ehLogoff = false;
+    bool ehLogoff = false;
     public FrmPrincipal(string nomeUsuario, string cargoUsuario)
     {
         InitializeComponent();
@@ -40,7 +40,15 @@ public partial class FrmPrincipal : Form
     {
         if (!ehLogoff)
         {
-        Application.Exit();
+            Application.Exit();
         }
+    }
+    //Metodo para abrir frm de cadastro de usuario
+    private void cadastrarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        FrmCadastroUsuario tela = new FrmCadastroUsuario();
+        //o pai ( menu principal ) é o principal 
+        tela.MdiParent = this;
+        tela.Show(); //Abrindo dentro não ShowDialog
     }
 }
