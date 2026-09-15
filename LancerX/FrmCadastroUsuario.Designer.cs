@@ -123,7 +123,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 9;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Voltar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -132,6 +132,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(527, 296);
+            ControlBox = false;
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
             Controls.Add(cmbCargo);

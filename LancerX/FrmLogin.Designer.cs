@@ -102,6 +102,9 @@
             Controls.Add(lblSenha);
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lancer X";

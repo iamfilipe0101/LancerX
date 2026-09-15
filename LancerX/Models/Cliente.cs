@@ -6,17 +6,21 @@ namespace LancerX.Models
 {
     internal class Cliente
     {
-        public string Codigo { get; set; }
         public string Nome {  get; set; }
+        public string Cpf { get; set; }
+        public string Cnh { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public string Endereco { get; set; }
 
-        public Cliente(string codigo,  string nome, string telefone, string email)
+        public Cliente(string nome,  string cpf,string cnh, string telefone, string email, string endereco)
         {
-            Codigo = codigo;
             Nome = nome;
+            Cpf = cpf;
+            Cnh = cnh;
             Telefone = telefone;
             Email = email;
+            Endereco = endereco;
         }
     }
 }

@@ -74,7 +74,7 @@
             // mnuLogoff
             // 
             mnuLogoff.Name = "mnuLogoff";
-            mnuLogoff.Size = new Size(180, 22);
+            mnuLogoff.Size = new Size(109, 22);
             mnuLogoff.Text = "Logoff";
             mnuLogoff.Click += mnuLogoff_click;
             // 
@@ -88,8 +88,8 @@
             // cadastrarUsuáriosToolStripMenuItem
             // 
             cadastrarUsuáriosToolStripMenuItem.Name = "cadastrarUsuáriosToolStripMenuItem";
-            cadastrarUsuáriosToolStripMenuItem.Size = new Size(180, 22);
-            cadastrarUsuáriosToolStripMenuItem.Text = "Cadastrar usuários";
+            cadastrarUsuáriosToolStripMenuItem.Size = new Size(187, 22);
+            cadastrarUsuáriosToolStripMenuItem.Text = "Usuarios Cadastrados";
             cadastrarUsuáriosToolStripMenuItem.Click += cadastrarUsuáriosToolStripMenuItem_Click;
             // 
             // statusStrip1

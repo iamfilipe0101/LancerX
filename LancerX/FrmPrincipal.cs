@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LancerX.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,22 +11,28 @@ namespace LancerX;
 
 public partial class FrmPrincipal : Form
 {
+    
     bool ehLogoff = false;
-    public FrmPrincipal(string nomeUsuario, string cargoUsuario)
+    public FrmPrincipal()   
     {
         InitializeComponent();
-        // mostra numa barra ou label:
-        lblUsuarioLogado.Text = "Logado como: " + nomeUsuario + " (" + cargoUsuario + ")";
-        //Verifica o cargo do usuário, se não é Admin ele Esconde o menustrip de Administrador
-        if (cargoUsuario != "Admin")
+
+        // pega o nome e cargo da sessão (não mais de parâmetro)
+        lblUsuarioLogado.Text = "Logado como: " + SessaoAtual.NomeCompleto + " (" + SessaoAtual.Cargo + ")";
+
+        // se não é Admin, esconde o menu de administrador
+        if (SessaoAtual.Cargo != "Admin")
         {
             administradorToolStripMenuItem.Enabled = false;
         }
     }
+    //Botao de abrir Cadastro de clientes
 
     private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
     {
-
+        FrmClientesCadastrados tela = new FrmClientesCadastrados();
+        tela.MdiParent = this;
+        tela.Show();
     }
     //botao sair no menu strip, volta para tela de login
     private void mnuLogoff_click(object sender, EventArgs e)
@@ -46,7 +53,7 @@ public partial class FrmPrincipal : Form
     //Metodo para abrir frm de cadastro de usuario
     private void cadastrarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        FrmCadastroUsuario tela = new FrmCadastroUsuario();
+        FrmUsuariosCadastrados tela = new FrmUsuariosCadastrados();
         //o pai ( menu principal ) é o principal 
         tela.MdiParent = this;
         tela.Show(); //Abrindo dentro não ShowDialog

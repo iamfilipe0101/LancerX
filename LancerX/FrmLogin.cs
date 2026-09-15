@@ -1,6 +1,8 @@
 using ControleDeEstoque;
 using LancerX.Models;
 using Microsoft.Data.SqlClient;
+using System.Numerics;
+using static LancerX.FrmPrincipal;
 namespace LancerX
 {
     public partial class FrmLogin : Form
@@ -19,39 +21,38 @@ namespace LancerX
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+       private void btnLogin_Click(object sender, EventArgs e)
         {
             // pergunta pro banco se existe alguém com esse login E essa senha
-            // (@login e @senha ficam vazios de propósito, preencho eles logo abaixo)
             string sql = "SELECT * FROM Usuarios WHERE Login = @login AND Senha = @senha";
 
             using (SqlConnection conexao = new SqlConnection(ConexaoBD.stringConexao))
             {
                 SqlCommand comando = new SqlCommand(sql, conexao);
 
-                // aqui preencho os espaços do SQL com o que o cara digitou
-                // fazer assim (e não colar o texto direto) evita que alguém quebre o banco escrevendo comando no campo
+                // preenche os espaços do SQL com o que o cara digitou (protege contra invasão)
                 comando.Parameters.AddWithValue("@login", txtUsuario.Text);
                 comando.Parameters.AddWithValue("@senha", txtSenha.Text);
 
                 conexao.Open();
                 SqlDataReader leitor = comando.ExecuteReader();
 
-                // se o Read() achou uma linha, é porque o usuário existe -> login válido
+                // se o Read() achou uma linha, o usuário existe -> login válido
                 if (leitor.Read())
                 {
-                    // aproveito e pego o nome e o cargo pra mandar pra tela principal mostrar
-                    string nome = leitor["NomeCompleto"].ToString();
-                    string cargo = leitor["Cargo"].ToString();
+                    // guarda quem logou na sessão, pra qualquer tela poder consultar depois
+                    SessaoAtual.UsuarioId = Convert.ToInt32(leitor["Id"]);
+                    SessaoAtual.Login = leitor["Login"].ToString();
+                    SessaoAtual.NomeCompleto = leitor["NomeCompleto"].ToString();
+                    SessaoAtual.Cargo = leitor["Cargo"].ToString();
 
-                    //Abrir o frmPrincipal passando nome e cargo
-                    FrmPrincipal principal = new FrmPrincipal(nome, cargo);
+                    FrmPrincipal principal = new FrmPrincipal();
                     principal.Show();
-                    this.Hide();   // escondo o login em vez de fechar (senão o programa cairia junto)
+                    this.Hide();   // esconde o login em vez de fechar (senão o programa cairia junto)
                 }
                 else
                 {
-                    // não achou ninguém = ou o login tá errado, ou a senha
+                    // não achou ninguém = login ou senha errados
                     Aviso("Usuário ou senha inválidos!");
                 }
             }

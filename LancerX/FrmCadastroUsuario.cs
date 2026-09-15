@@ -12,6 +12,7 @@ namespace LancerX
 {
     public partial class FrmCadastroUsuario : Form
     {   
+
         //Funcao Aviso
         private void Aviso(string aviso)
         {
@@ -65,6 +66,7 @@ namespace LancerX
             txtPassword.Text = "";
             cmbCargo.Text = "";
             Aviso("Usuário Cadastrado!");
+            txtNomeCompleto.Focus();
         }
     }
 }
