@@ -11,9 +11,9 @@ namespace LancerX;
 
 public partial class FrmPrincipal : Form
 {
-    
+
     bool ehLogoff = false;
-    public FrmPrincipal()   
+    public FrmPrincipal()
     {
         InitializeComponent();
 
@@ -57,5 +57,12 @@ public partial class FrmPrincipal : Form
         //o pai ( menu principal ) é o principal 
         tela.MdiParent = this;
         tela.Show(); //Abrindo dentro não ShowDialog
+    }
+
+    private void cadastroDeVeiculosToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        FrmCadastroDeVeiculos tela = new FrmCadastroDeVeiculos();
+        tela.MdiParent = this;
+        tela.Show();
     }
 }

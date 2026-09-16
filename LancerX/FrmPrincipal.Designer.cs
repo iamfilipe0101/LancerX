@@ -37,6 +37,7 @@
             cadastrarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             lblUsuarioLogado = new ToolStripStatusLabel();
+            cadastroDeVeiculosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, cadastroDeVeiculosToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -60,7 +61,7 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(183, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
@@ -106,6 +107,13 @@
             lblUsuarioLogado.Name = "lblUsuarioLogado";
             lblUsuarioLogado.Size = new Size(0, 17);
             // 
+            // cadastroDeVeiculosToolStripMenuItem
+            // 
+            cadastroDeVeiculosToolStripMenuItem.Name = "cadastroDeVeiculosToolStripMenuItem";
+            cadastroDeVeiculosToolStripMenuItem.Size = new Size(183, 22);
+            cadastroDeVeiculosToolStripMenuItem.Text = "Cadastro de Veiculos";
+            cadastroDeVeiculosToolStripMenuItem.Click += cadastroDeVeiculosToolStripMenuItem_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -138,5 +146,6 @@
         private ToolStripStatusLabel lblUsuarioLogado;
         private ToolStripMenuItem administradorToolStripMenuItem;
         private ToolStripMenuItem cadastrarUsuáriosToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeVeiculosToolStripMenuItem;
     }
 }
