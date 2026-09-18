@@ -45,6 +45,7 @@
             // txtPlaca
             // 
             txtPlaca.Location = new Point(28, 115);
+            txtPlaca.MaxLength = 7;
             txtPlaca.Name = "txtPlaca";
             txtPlaca.Size = new Size(303, 23);
             txtPlaca.TabIndex = 0;
@@ -124,6 +125,7 @@
             // txtValorDiaria
             // 
             txtValorDiaria.Location = new Point(468, 218);
+            txtValorDiaria.MaxLength = 5;
             txtValorDiaria.Name = "txtValorDiaria";
             txtValorDiaria.Size = new Size(100, 23);
             txtValorDiaria.TabIndex = 11;

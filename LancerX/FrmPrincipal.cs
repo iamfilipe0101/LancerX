@@ -61,7 +61,7 @@ public partial class FrmPrincipal : Form
 
     private void cadastroDeVeiculosToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        FrmCadastroDeVeiculos tela = new FrmCadastroDeVeiculos();
+        FrmVeiculosCadastrados tela = new FrmVeiculosCadastrados();
         tela.MdiParent = this;
         tela.Show();
     }

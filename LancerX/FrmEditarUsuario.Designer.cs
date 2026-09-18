@@ -142,7 +142,7 @@
             Controls.Add(lblLogin);
             Controls.Add(lblNomeCompleto);
             Name = "FrmEditarUsuario";
-            Text = "FrmEditarUsuario";
+            Text = "Editar Usuario";
             ResumeLayout(false);
             PerformLayout();
         }

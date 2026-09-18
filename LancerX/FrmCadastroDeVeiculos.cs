@@ -75,6 +75,9 @@ namespace LancerX
 
             Aviso("Carro cadastrado!");
             // limpar campos, etc.
+            txtPlaca.Text = "";
+            txtValorDiaria.Text = "";
+            txtPlaca.Focus();
         }
 
         private void FrmCadastroDeVeiculos_Load(object sender, EventArgs e)
